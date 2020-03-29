@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <b><title>Facebook - log in or sign ...</title></b>
     <link rel="icon" href="icon1.jpg" type="image/gif" sizes="16x16">
+    <style>
+        input[type=submit]{
+            width: 20%;
+            margin-left: none;
+            background: rgba(12, 116, 27, 0.71);    
+            color: white;
+            border: none;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body style="background-color:rgba(228, 230, 233, 0.31)">
   <table style="background-color: rgba(25, 76, 152, 0.91);padding: 1px" width="1520">
@@ -11,12 +21,12 @@
       <tr><td width="760"><font color="white"><h1>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;facebook</h1></font></td>
          
           <td >
-          <form>
+          <form action="page2.html">
               <label for="email"><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email or phone</font></label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label for="pass"><font color="white">Password</font></label><br>
               
               
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="email"> &nbsp;&nbsp;<input type="password" id="pass">&nbsp;&nbsp;
-              <input  type="submit" value="Log In"><br>
+              <button >Log In</button><br>
               
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://web.facebook.com/login/identify/?ctx=recover&ars=royal_blue_bar"><font color="white">Forgotten account?</font></a>
               
@@ -30,14 +40,32 @@
                 <h2>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facebook helps you connect and share with the<br> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;people in your life.</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <img src="face.png" alt="world map">
            </td>
-           <td >
-              Create an account<br>
-              It's quick and easy.
+           <td>
+               <font size="6"><b>Create an account</b></font><br>
+               <font size="4"> It's quick and easy.</font><br><br>
               
               <form>
                   <input type="text" placeholder="First name" /> 
-                  <input type="text" placeholder="Surname" /> <br>
-                  <input type="text" placeholder="Mobile number or email address" /> 
+                  <input type="text" placeholder="Surname" /> <br><br>
+                  <input type="text" placeholder="Mobile number or email address" /> <br><br>
+                  <input type="password" placeholder="New password" /> <br><br>
+                  <font> Birthday</font><br>
+                  
+                  <input type="date"><br><br>
+                  <font>Gender</font><br>
+                  <input type="radio" name="hi" id="female"><label for="female">Female</label>
+                  
+                  <input type="radio" name="hi" id="male"><label for="male">Male</label>
+                  
+                  <input type="radio" name="hi" id="custom"><label for="custom">Custom</label><br><br>
+                  
+                  <font size="1">By clicking Sign Up, you agree to our<a href="https://web.facebook.com/legal/terms/update"> Terms, </a><a href="https://web.facebook.com/about/privacy/update">Data Policy</a> and<br> <a href="https://web.facebook.com/policies/cookies/">Cookie Policy</a>. You may receive SMS notifications from us and<br> can opt out at any time.</font>
+                  <br><br>
+                  
+                  <input type="submit" value="Sign Up" /><br><br>
+                  
+                  <a href="https://web.facebook.com/pages/create/?ref_type=registration_form">Create a Page</a> for a celebrity, band or business.
+                  
                 
               </form>
                
@@ -46,5 +74,4 @@
         
     </table>
 </body>
-    
 </html>
