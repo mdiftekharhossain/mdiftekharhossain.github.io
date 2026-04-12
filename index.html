@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Iftekhar Hossain | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #444;
+            --accent: #106eea;
+            --accent-hover: #0a58ca;
+            --green-hover: #198754;
+            --linkedin-color: #0077b5;
+            --github-color: #333;
+            --text: #333;
+            --text-muted: #666;
+            --bg: #fff;
+            --light-bg: #f9f9f9;
+            --border-color: #e5e5e5;
+            --card-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            --hover-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; padding: 0; background-color: var(--bg); }
+        a { text-decoration: none; color: var(--accent); transition: 0.2s; }
+        a:hover { color: var(--accent-hover); }
+
+        /* --- LAYOUT --- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 35px 0; border-bottom: 1px solid #f0f0f0; }
+        h2 { font-size: 1.6rem; color: #000; margin-bottom: 25px; font-weight: 700; }
+
+        /* --- HEADER --- */
+        header { background: var(--light-bg); padding: 50px 0; border-bottom: 1px solid #ddd; }
+        .header-content { display: flex; align-items: flex-start; gap: 40px; }
+        
+        .header-image { flex: 0 0 200px; }
+        .profile-pic { 
+            width: 200px; height: 200px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            border: 5px solid #fff; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+        }
+
+        .header-text { flex: 1; margin-top: 10px; }
+        .profile-name { font-size: 2.6rem; font-weight: 800; margin: 0 0 5px 0; color: var(--primary); line-height: 1.1; letter-spacing: -0.5px; }
+        
+        .profile-designation { 
+            font-size: 1.25rem; 
+            color: #555; 
+            margin-bottom: 12px; 
+            font-weight: 500; 
+        }
+        .profile-designation span { color: var(--accent); font-weight: 600; }
+
+        .header-meta { color: #666; font-size: 0.95rem; margin-bottom: 20px; display: flex; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .header-meta span { display: flex; align-items: center; gap: 6px; }
+        .icon-loc { color: #dc3545; } 
+        .icon-mail { color: #198754; } 
+
+        .header-bio { color: #444; margin-bottom: 25px; line-height: 1.7; font-size: 1rem; max-width: 750px; text-align: justify; }
+
+        /* --- HEADER BUTTONS --- */
+        .btn-group { display: flex; gap: 12px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 6px; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; transition: all 0.2s ease; cursor: pointer; background: #fff; }
+        
+        .btn-connect { border: 1px solid var(--accent); color: var(--accent); } 
+        .btn-connect:hover { background: var(--accent); color: #fff; }
+        
+        .btn-email { border: 1px solid var(--green-hover); color: var(--green-hover); }
+        .btn-email:hover { background: var(--green-hover); color: #fff; }
+
+        .btn-cv { border: 1px solid var(--accent); color: var(--accent); }
+        .btn-cv:hover { background: var(--accent); color: #fff; }
+
+        /* --- CARDS --- */
+        .dynamic-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+        .dynamic-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+            z-index: 2;
+        }
+
+        /* --- EXPERIENCE --- */
+        .experience-card { margin-bottom: 20px; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px; }
+        .item-title { font-weight: 700; font-size: 1.15rem; color: #000; }
+        .item-meta { color: var(--text-muted); font-size: 0.9rem; }
+        .job-details { list-style-type: disc; padding-left: 18px; color: #444; text-align: justify; font-size: 0.95rem; margin: 0; line-height: 1.6;}
+        .job-details li { margin-bottom: 6px; }
+
+        /* --- EDUCATION --- */
+        .edu-card { display: flex; gap: 25px; align-items: flex-start; }
+        .edu-logo {
+            flex: 0 0 60px; height: 60px;
+            background: #f0f7ff; color: var(--accent);
+            border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+        }
+        .edu-content { flex: 1; }
+        .edu-school { font-size: 1.2rem; font-weight: 700; color: #000; }
+        .edu-degree { font-size: 1.05rem; font-weight: 600; color: #333; margin-bottom: 5px; }
+        .edu-time { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; }
+        .edu-details { margin-top: 8px; font-size: 0.95rem; color: #555; padding-left: 18px;}
+
+        /* --- SKILLS --- */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+        .skill-category { height: 100%; display: flex; flex-direction: column; }
+        .cat-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 15px; color: #000; }
+        .pill-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tech-pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #fff; border: 1px solid #ddd;
+            padding: 6px 14px; border-radius: 50px;
+            font-size: 0.9rem; color: #333; transition: 0.1s;
+        }
+        .tech-pill:hover { border-color: var(--accent); background: #f0f8ff; color: var(--accent); }
+
+        /* --- PROJECTS --- */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .project-card { display: flex; flex-direction: column; height: 100%; }
+        .project-card h3 { margin-top: 0; font-size: 1.15rem; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+        .project-card p { flex-grow: 1; text-align: justify; font-size: 0.95rem; color: #555; line-height: 1.6; }
+        .tech-stack { margin-top: 15px; font-size: 0.85rem; color: #555; font-family: monospace; background: #f8f9fa; padding: 8px; border-radius: 4px; }
+
+        /* --- PUBLICATIONS --- */
+        .pub-card { padding: 20px; margin-bottom: 15px; }
+        .pub-title { font-size: 1.1rem; font-weight: 700; color: #000; margin-bottom: 6px; }
+        .pub-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px; }
+
+        /* --- ACHIEVEMENTS --- */
+        .achieve-list { display: flex; flex-direction: column; gap: 12px; }
+        .achieve-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px;}
+        .achieve-title { font-weight: 600; font-size: 1rem; color: #333; }
+        .achieve-date { font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; margin-left: 15px;}
+
+        .hidden-content { display: none; }
+        .show-more-container { text-align: center; margin-top: 20px; }
+        .btn-show-more { background: none; border: none; color: var(--accent); font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+
+        /* --- CONNECT SECTION --- */
+        .connect-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn-social { flex: 1; min-width: 160px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px; border: 1px solid #ddd; border-radius: 6px; background: #fff; color: #555; font-weight: 600; transition: all 0.2s; }
+        .btn-social:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.08); color: #fff; }
+        .social-linkedin { color: var(--linkedin-color); border-color: var(--linkedin-color); }
+        .social-linkedin:hover { background: var(--linkedin-color); }
+        .social-github { color: var(--github-color); border-color: var(--github-color); }
+        .social-github:hover { background: var(--github-color); }
+
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; align-items: center; text-align: center; }
+            .header-bio { text-align: center; }
+            .btn-group, .header-meta { justify-content: center; }
+            .edu-card { flex-direction: column; align-items: center; text-align: center; }
+        }
+        
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #888; border-top: 1px solid #f0f0f0; margin-top: 30px;}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-image">
+                    <img src="Iftekhar_Hossain.jpeg" alt="Md Iftekhar Hossain" class="profile-pic">
+                </div>
+                <div class="header-text">
+                    <h1 class="profile-name">Md Iftekhar Hossain</h1>
+                    <div class="profile-designation">
+                        CSE Graduate | Researcher | <span>Social Development Coordinator</span>
+                    </div>
+                    <div class="header-meta">
+                        <span><i class="fas fa-map-marker-alt icon-loc"></i> Dhaka, Bangladesh</span>
+                        <span><i class="fas fa-envelope icon-mail"></i> <a href="mailto:iftekharhossaincse@gmail.com" style="color:inherit;">iftekharhossaincse@gmail.com</a></span>
+                        <span><i class="fas fa-phone"></i> (+880) 1571301918</span>
+                    </div>
+                    <p class="header-bio">
+                        Resilient BSc in Computer Science and Engineering graduate from United International University with a record of academic excellence. I combine technical expertise in machine learning research with significant experience as a social development Coordinator. My goal is to leverage this unique blend of skills to drive innovation and meaningful community engagement.
+                    </p>
+                    <div class="btn-group">
+                        <a href="https://linkedin.com/in/iftekhar08" target="_blank" class="btn btn-connect">
+                            <i class="fab fa-linkedin"></i> Connect
+                        </a>
+                        <a href="mailto:iftekharhossaincse@gmail.com" class="btn btn-email">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="CV_of_Iftekhar_Hossain.pdf" download class="btn btn-cv">
+                        <i class="fas fa-file-download"></i> Download CV
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Work Experience</h2>
+            <div class="dynamic-card experience-card">
+                <div class="item-header">
+                    <span class="item-title">Coordinator (Previously Volunteer for 4 Years)</span>
+                    <span class="item-meta">Prattasha Samazik Unnayan Sangstha (PSUS) | 2024 – Present</span>
+                </div>
+                <ul class="job-details">
+                    <li><strong>Resource Mobilization:</strong> Partnered with consultants to secure international funding and development projects.</li>
+                    <li><strong>Content Production:</strong> Directed video documentaries showcasing project success stories and organizational impact.</li>
+                    <li><strong>Strategic Representation:</strong> Provided organizational insights during high-level stakeholder meetings and development programs in Dhaka.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="dynamic-card edu-card">
+                <div class="edu-logo"><i class="fas fa-university"></i></div>
+                <div class="edu-content">
+                    <div class="edu-school">United International University</div>
+                    <div class="edu-degree">B.Sc. in Computer Science and Engineering</div>
+                    <div class="edu-time">Graduated 2024</div>
+                    <div class="edu-grade"><strong>CGPA: 3.39 / 4.00</strong> (Major: Software Engineering)</div>
+                </div>
+            </div>
+            <div class="dynamic-card edu-card" style="margin-top: 20px;">
+                <div class="edu-logo"><i class="fas fa-school"></i></div>
+                <div class="edu-content">
+                    <div class="edu-school">Chuadanga Govt. College, Chuadanga</div>
+                    <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+                    <div class="edu-time">2018 (Jessore Board)</div>
+                    <div class="edu-grade"><strong>GPA: 5.00 / 5.00</strong> (Major: Science)</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="dynamic-card skill-category">
+                    <div class="cat-title">Programming & Web</div>
+                    <div class="pill-container">
+                        <span class="tech-pill">C/C++</span>
+                        <span class="tech-pill">Java</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">PHP</span>
+                        <span class="tech-pill">React.js</span>
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Spring Boot</span>
+                        <span class="tech-pill">Django</span>
+                    </div>
+                </div>
+                <div class="dynamic-card skill-category">
+                    <div class="cat-title">Data Science & Infrastructure</div>
+                    <div class="pill-container">
+                        <span class="tech-pill">PyTorch</span>
+                        <span class="tech-pill">TensorFlow</span>
+                        <span class="tech-pill">Scikit-Learn</span>
+                        <span class="tech-pill">PennyLane</span>
+                        <span class="tech-pill">MySQL</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">Docker</span>
+                        <span class="tech-pill">Git/GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>University Projects</h2>
+            <div class="projects-grid">
+                    <div class="dynamic-card project-card">
+                    <h3><a href="https://www.figma.com/design/YxGtWpzlIIKgzMlESMVMAZ/CodeKoro-Prototype?node-id=0-1&p=f&t=lwPgkAcDdQYCHq8r-0" target="_blank">CodeKoro: UIU Online Judge</a></h3>
+                    <p>Built a university-specific competitive programming platform enabling real-time contests and automated performance tracking to foster student coding skills.</p>
+                    <div class="tech-stack">Django, React.js, PostgreSQL, Node.js, Redis, Docker</div>
+                </div>
+                <div class="dynamic-card project-card">
+                    <h3><a href="https://www.figma.com/design/dAmNWoeadSyL5CuDkjTWHO/PrintKoro?node-id=1-4%26p=f%26t=gkH9bytCgHx18bQh-0" target="_blank">Print Koro: Smart Printing</a></h3>
+                    <p>Developed a self-service printing ecosystem allowing users to upload documents via app and print via QR codes, ensuring secure file handling.</p>
+                    <div class="tech-stack">Android SDK, Django, Node.js, Figma</div>
+                </div>
+                <div class="dynamic-card project-card">
+                    <h3>Smart Prison System</h3>
+                    <p>Designed an IoT-driven automation system for correctional facilities to manage meal distribution and health tracking using NFC and sensors.</p>
+                    <div class="tech-stack">Arduino, ESP32, NFC, IoT Sensors</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Publications & Certifications</h2>
+            <div class="dynamic-card pub-card">
+                <div class="pub-title">A Novel Pessimistic Decision Tree Pruning Approach for Classification</div>
+                <div class="pub-meta">Published 2025</div>
+                <div class="pub-authors">Al Maruf Hassan, Abir Hossain Amee, <strong>Md Iftekhar Hossain</strong>, Sara Ferdous Khan, Md. FaridDewan</div>
+                <p style="font-size: 0.95rem; color: #555;">Developed a new pruning methodology to improve model generalization and reduce overfitting in classification tasks.</p>
+                <a href="https://www.researchgate.net/publication/378201414_A_Novel_Pessimistic_Decision_Tree_Pruning_Approach_for_Classification" class="btn-view-paper" target="_blank"><i class="fas fa-external-link-alt"></i> View Paper</a>
+
+            </div>
+            <div class="dynamic-card achieve-item">
+            <div style="display: flex; flex-direction: column;">
+                <span class="achieve-title">Google UX Design Professional Certificate (Coursera)</span>
+                <a href="https://www.coursera.org/account/accomplishments/verify/MGVGRQY2OGZZ" target="_blank" style="font-size: 0.85rem;"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+            </div>
+            <span class="achieve-date">2025</span>
+        </div>
+        <div class="dynamic-card achieve-item">
+            <div style="display: flex; flex-direction: column;">
+                <span class="achieve-title">UI/UX Design Career Track (Interactive Cares)</span>
+                <a href="https://interactivecares.com/certificate/26fc2bb9-3217-4841-8680-92a52b8eb529" target="_blank" style="font-size: 0.85rem;"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+            </div>
+            <span class="achieve-date">2025</span>
+        </div>
+        <div class="dynamic-card achieve-item">
+            <div style="display: flex; flex-direction: column;">
+                <span class="achieve-title">UI/UX Product Design: Fundamentals to Prototyping (Business Automation Ltd)</span>
+                <a href="https://drive.google.com/file/d/1gQHHewvFtfskFwHWZzTvRWGMZZpbJ_Ie/view" target="_blank" style="font-size: 0.85rem;"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+            </div>
+            <span class="achieve-date">2025</span>
+        </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Achievements</h2>
+            <div class="achieve-list">
+                <div class="dynamic-card achieve-item">
+                    <span class="achieve-title">1st Runner-up - CodeKoro (UIU CSE Project Show)</span>
+                    <span class="achieve-date">2024</span>
+                </div>
+                <div class="dynamic-card achieve-item">
+                    <span class="achieve-title">2nd Runner-up - Smart Prison (UIU CSE Project Show)</span>
+                    <span class="achieve-date">2023</span>
+                </div>
+                <div class="dynamic-card achieve-item">
+                    <span class="achieve-title">2nd Runner-up - PrintKoro (UIU CSE Project Show)</span>
+                    <span class="achieve-date">2023</span>
+                </div>
+            </div>
+        </section>
+
+        <section style="border-bottom: none;">
+            <div class="dynamic-card">
+                <h2 style="margin-top: 0;">Connect With Me</h2>
+                <div class="connect-grid">
+                    <a href="https://linkedin.com/in/iftekhar08" target="_blank" class="btn-social social-linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/iftekhar08" target="_blank" class="btn-social social-github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Md Iftekhar Hossain. Built with passion and code.</p>
+    </footer>
+
+</body>
+</html>
